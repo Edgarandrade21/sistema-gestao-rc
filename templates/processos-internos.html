@@ -1,113 +1,100 @@
 <section class="processos-internos">
-    <div class="processos-header">
+    <div class="header">
         <h2>Gestão de Processos Internos</h2>
-        <div class="processos-actions">
+        <div class="header-actions">
             <button id="btnNovoProcesso" class="btn-primary">
                 <i class="fas fa-plus"></i> Novo Processo
             </button>
             <button id="btnRelatorio" class="btn-secondary">
-                <i class="fas fa-chart-bar"></i> Relatórios
+                <i class="fas fa-file-alt"></i> Relatórios
             </button>
         </div>
     </div>
 
-    <!-- Indicadores Principais -->
+    <!-- Indicadores -->
     <div class="indicadores-grid">
-        <div class="indicador-card">
-            <h3>Processos Ativos</h3>
+        <div class="indicador">
+            <h3>Total de Processos</h3>
             <p id="totalProcessos">0</p>
         </div>
-        <div class="indicador-card">
-            <h3>Eficiência</h3>
+        <div class="indicador">
+            <h3>Eficiência Média</h3>
             <p id="eficiencia">0%</p>
         </div>
-        <div class="indicador-card">
-            <h3>Economia</h3>
-            <p id="economia">R$ 0,00</p>
+        <div class="indicador">
+            <h3>Economia Total</h3>
+            <p id="economia">R$ 0</p>
         </div>
-        <div class="indicador-card">
+        <div class="indicador">
             <h3>Produtividade</h3>
             <p id="produtividade">0%</p>
         </div>
     </div>
 
-    <!-- Métricas de Desempenho -->
-    <div class="metricas-grid">
-        <div class="metrica-card">
-            <h3>Análise de Desempenho</h3>
+    <!-- Departamentos -->
+    <div class="departamentos-grid">
+        <div class="departamento">
+            <h4>Administrativo</h4>
+            <p>Processos: <span id="adminProcessos">0</span></p>
+            <p>Eficiência: <span id="adminEficiencia">0%</span></p>
+        </div>
+        <div class="departamento">
+            <h4>Operacional</h4>
+            <p>Processos: <span id="operProcessos">0</span></p>
+            <p>Eficiência: <span id="operEficiencia">0%</span></p>
+        </div>
+        <div class="departamento">
+            <h4>Financeiro</h4>
+            <p>Processos: <span id="finProcessos">0</span></p>
+            <p>Eficiência: <span id="finEficiencia">0%</span></p>
+        </div>
+        <div class="departamento">
+            <h4>RH</h4>
+            <p>Processos: <span id="rhProcessos">0</span></p>
+            <p>Eficiência: <span id="rhEficiencia">0%</span></p>
+        </div>
+        <div class="departamento">
+            <h4>SSMA</h4>
+            <p>Processos: <span id="ssmaProcessos">0</span></p>
+            <p>Eficiência: <span id="ssmaEficiencia">0%</span></p>
+        </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="graficos-grid">
+        <div class="grafico">
+            <h4>Desempenho por Processo</h4>
             <canvas id="desempenhoChart"></canvas>
         </div>
-        <div class="metrica-card">
-            <h3>Economia por Departamento</h3>
+        <div class="grafico">
+            <h4>Economia por Departamento</h4>
             <canvas id="economiaChart"></canvas>
         </div>
     </div>
 
-    <!-- Departamentos -->
-    <div class="departamentos-grid">
-        <div class="departamento-card">
-            <h3>Administrativo</h3>
-            <div class="departamento-info">
-                <span>Processos: <strong id="adminProcessos">0</strong></span>
-                <span>Eficiência: <strong id="adminEficiencia">0%</strong></span>
-            </div>
-        </div>
-        <div class="departamento-card">
-            <h3>Operacional</h3>
-            <div class="departamento-info">
-                <span>Processos: <strong id="operProcessos">0</strong></span>
-                <span>Eficiência: <strong id="operEficiencia">0%</strong></span>
-            </div>
-        </div>
-        <div class="departamento-card">
-            <h3>Financeiro</h3>
-            <div class="departamento-info">
-                <span>Processos: <strong id="finProcessos">0</strong></span>
-                <span>Eficiência: <strong id="finEficiencia">0%</strong></span>
-            </div>
-        </div>
-        <div class="departamento-card">
-            <h3>RH</h3>
-            <div class="departamento-info">
-                <span>Processos: <strong id="rhProcessos">0</strong></span>
-                <span>Eficiência: <strong id="rhEficiencia">0%</strong></span>
-            </div>
-        </div>
-        <div class="departamento-card">
-            <h3>SSMA</h3>
-            <div class="departamento-info">
-                <span>Processos: <strong id="ssmaProcessos">0</strong></span>
-                <span>Eficiência: <strong id="ssmaEficiencia">0%</strong></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lista de Processos -->
-    <div class="processos-lista">
-        <h3>Processos por Departamento</h3>
-        <div class="processos-tabela">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Número</th>
-                        <th>Data Criação</th>
-                        <th>Responsável</th>
-                        <th>Departamento</th>
-                        <th>Status</th>
-                        <th>Eficiência</th>
-                        <th>Economia</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="processosTableBody">
-                    <!-- Dados serão carregados via JavaScript -->
-                </tbody>
-            </table>
-        </div>
+    <!-- Tabela de Processos -->
+    <div class="tabela-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Data</th>
+                    <th>Responsável</th>
+                    <th>Departamento</th>
+                    <th>Status</th>
+                    <th>Eficiência</th>
+                    <th>Economia</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="processosTableBody">
+                <!-- Preenchido via JavaScript -->
+            </tbody>
+        </table>
     </div>
 </section>
 
-<!-- Modal de Novo Processo -->
+<!-- Modal Novo Processo -->
 <div id="modalNovoProcesso" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -117,7 +104,7 @@
         <div class="modal-body">
             <form id="formNovoProcesso">
                 <div class="form-group">
-                    <label for="numeroDocumento">Número do Documento</label>
+                    <label for="numeroDocumento">Número do Processo</label>
                     <input type="text" id="numeroDocumento" required>
                 </div>
                 <div class="form-group">
@@ -131,7 +118,6 @@
                 <div class="form-group">
                     <label for="departamento">Departamento</label>
                     <select id="departamento" required>
-                        <option value="">Selecione...</option>
                         <option value="Administrativo">Administrativo</option>
                         <option value="Operacional">Operacional</option>
                         <option value="Financeiro">Financeiro</option>
@@ -143,30 +129,31 @@
                     <label for="observacao">Observação</label>
                     <textarea id="observacao" rows="4"></textarea>
                 </div>
-
-                <!-- Seção de Documentos -->
-                <div class="documentos-section">
-                    <h4>Documentos do Processo</h4>
-                    <div class="documentos-grid" id="documentosGrid">
-                        <!-- Documentos serão adicionados aqui -->
-                    </div>
-                    <div class="form-group">
-                        <label for="novoDocumento">Adicionar Documento</label>
-                        <div class="documento-input">
+                <div class="form-group">
+                    <h4>Documentos</h4>
+                    <div class="documentos-form">
+                        <div class="form-row">
                             <input type="text" id="nomeDocumento" placeholder="Nome do documento">
-                            <input type="file" id="arquivoDocumento" accept=".pdf,.doc,.docx,.xls,.xlsx">
-                            <button type="button" class="btn-primary" id="btnAdicionarDocumento">
+                            <input type="file" id="arquivoDocumento">
+                            <button type="button" id="btnAdicionarDocumento" class="btn-secondary">
                                 <i class="fas fa-plus"></i> Adicionar
                             </button>
                         </div>
+                        <div id="documentosGrid" class="documentos-grid">
+                            <!-- Preenchido via JavaScript -->
+                        </div>
                     </div>
                 </div>
-
                 <div class="form-actions">
-                    <button type="button" class="btn-secondary" id="btnCancelar">Cancelar</button>
+                    <button type="button" id="btnCancelar" class="btn-secondary">Cancelar</button>
                     <button type="submit" class="btn-primary">Salvar</button>
                 </div>
             </form>
         </div>
     </div>
-</div> 
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/organograma.js"></script>
+<script src="js/processos-internos.js"></script> 

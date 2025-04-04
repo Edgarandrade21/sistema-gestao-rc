@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organograma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="organograma">
+        <div class="organograma-header">
+            <h2>Organograma da Empresa</h2>
+            <div class="organograma-actions">
+                <button class="btn-adicionar" onclick="organograma.abrirModalCargo()">
+                    <i class="fas fa-plus"></i> Adicionar Cargo
+                </button>
+                <button class="btn-editar" onclick="organograma.ativarModoEdicao()">
+                    <i class="fas fa-edit"></i> Editar Organograma
+                </button>
+            </div>
+        </div>
+
+        <div class="organograma-container">
+            <div class="nivel-1">
+                <!-- Os cargos serão adicionados aqui dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cargo -->
+    <div class="modal-cargo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Cargo</h3>
+                <button class="btn-close" onclick="organograma.fecharModalCargo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="formCargo" onsubmit="organograma.salvarCargo(event)">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" name="cargo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancelar" onclick="organograma.fecharModalCargo()">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/organograma.js"></script>
+</body>
+</html> 

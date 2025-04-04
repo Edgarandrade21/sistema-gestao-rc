@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="assets/logo-rc.png" alt="Rodoviário Confiança" class="logo-img">
+            <img src="assets/images/logo-rc.png.png" alt="Rodoviário Confiança" class="logo-img">
         </div>
         <div class="user-info">
             <span>Bem-vindo, Admin</span>
@@ -50,7 +50,54 @@
         <main class="main-content">
             <!-- Organograma -->
             <section id="organograma-section" class="content-section active">
-                <div id="organograma-container"></div>
+                <div class="organograma">
+                    <div class="organograma-header">
+                        <h2>Organograma</h2>
+                        <div class="organograma-actions">
+                            <button class="btn-adicionar" id="btnAdicionarCargo">
+                                <i class="fas fa-plus"></i>
+                                Adicionar Cargo
+                            </button>
+                            <button class="btn-editar" id="btnEditarOrganograma">
+                                <i class="fas fa-edit"></i>
+                                Editar Organograma
+                            </button>
+                            <button class="btn-layout" id="btnAlternarLayout">
+                                <i class="fas fa-arrows-alt-h"></i>
+                                Alternar Layout
+                            </button>
+                        </div>
+                    </div>
+                    <div id="organograma-container" class="organograma-container"></div>
+                </div>
+
+                <!-- Modal de Cargo -->
+                <div id="modalCargo" class="modal-cargo">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Adicionar Cargo</h3>
+                            <button class="btn-close" id="btnFecharModal">&times;</button>
+                        </div>
+                        <form id="formCargo">
+                            <div class="form-group">
+                                <label for="nomePessoa">Nome da Pessoa</label>
+                                <input type="text" id="nomePessoa" name="nomePessoa" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargo">Cargo</label>
+                                <input type="text" id="cargo" name="cargo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="modal-actions">
+                                <button type="button" class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                                <button type="submit" class="btn-salvar">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </section>
 
             <!-- ESG -->
