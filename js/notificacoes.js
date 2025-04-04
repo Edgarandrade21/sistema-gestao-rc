@@ -3,6 +3,7 @@ class Notificacoes {
     constructor() {
         this.notificacoes = [];
         this.container = null;
+        this.timeoutId = null;
         this.inicializar();
     }
 
@@ -14,6 +15,15 @@ class Notificacoes {
 
         // Carregar notificações do localStorage
         this.carregarNotificacoes();
+
+        // Configurar timeout para remover o container
+        this.timeoutId = setTimeout(() => {
+            this.container.style.transition = 'opacity 0.5s ease-out';
+            this.container.style.opacity = '0';
+            setTimeout(() => {
+                this.container.remove();
+            }, 500);
+        }, 10000);
     }
 
     adicionarNotificacao(titulo, mensagem, tipo = 'info') {
@@ -53,6 +63,8 @@ class Notificacoes {
     }
 
     atualizarInterface() {
+        if (!this.container) return;
+        
         this.container.innerHTML = '';
         
         this.notificacoes.forEach(notificacao => {

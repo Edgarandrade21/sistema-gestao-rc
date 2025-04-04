@@ -19,8 +19,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: #f5f5f5;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -107,6 +107,7 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
+    color: #333;
 }
 
 #logoutBtn {
@@ -131,11 +132,12 @@ header {
     max-width: 100%;
     margin: 0;
     padding: 20px;
+    background-color: #fff;
 }
 
 /* Estilos da Barra Lateral */
 .sidebar {
-    background-color: var(--card-bg);
+    background-color: #2c3e50;
     border-radius: 10px;
     padding: 20px;
     position: sticky;
@@ -153,7 +155,7 @@ header {
 .nav-item {
     padding: 12px 15px;
     border-radius: 8px;
-    color: var(--text-color);
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -162,11 +164,11 @@ header {
 }
 
 .nav-item:hover {
-    background-color: var(--secondary-color);
+    background-color: #34495e;
 }
 
 .nav-item.active {
-    background-color: var(--primary-color);
+    background-color: #3498db;
     color: white;
 }
 
@@ -179,6 +181,8 @@ header {
 .main-content {
     flex: 1;
     min-height: calc(100vh - 120px);
+    background-color: #fff;
+    color: #333;
 }
 
 .content-section {
@@ -1833,10 +1837,12 @@ button:hover {
     max-height: 80vh;
     overflow-y: auto;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
 }
 
 .notificacao {
@@ -1845,7 +1851,15 @@ button:hover {
     border-radius: 6px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #ccc;
+    border: 1px solid #e0e0e0;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease-out;
+}
+
+.notificacao.removendo {
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .notificacao.info {
@@ -1878,12 +1892,12 @@ button:hover {
 .notificacao-cabecalho h3 {
     margin: 0;
     font-size: 16px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .notificacao-data {
     font-size: 12px;
-    color: #666;
+    color: #777;
 }
 
 .notificacao button {
