@@ -1,0 +1,124 @@
+<section class="esg-section">
+    <div class="esg-header">
+        <h2>Programas ESG</h2>
+        <p class="data-hora" id="dataHoraAtual"></p>
+    </div>
+
+    <div class="esg-grid">
+        <!-- Pilar Ambiental -->
+        <div class="esg-card ambiental">
+            <h3>Ambiental</h3>
+            <div class="esg-indicators">
+                <div class="indicator">
+                    <span class="label">Emissão de CO2</span>
+                    <span class="value" id="emissaoCO2">0</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Consumo de Combustível</span>
+                    <span class="value" id="consumoCombustivel">0</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Manutenções Preventivas</span>
+                    <span class="value" id="manutencoesPrev">0</span>
+                </div>
+            </div>
+            <div class="esg-actions">
+                <button class="btn-primary" onclick="abrirRelatorioAmbiental()">Ver Relatório</button>
+            </div>
+        </div>
+
+        <!-- Pilar Social -->
+        <div class="esg-card social">
+            <h3>Social</h3>
+            <div class="esg-indicators">
+                <div class="indicator">
+                    <span class="label">Treinamentos Realizados</span>
+                    <span class="value" id="treinamentos">0</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Horas de Capacitação</span>
+                    <span class="value" id="horasCapacitacao">0</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Benefícios Ativos</span>
+                    <span class="value" id="beneficios">0</span>
+                </div>
+            </div>
+            <div class="esg-actions">
+                <button class="btn-primary" onclick="abrirRelatorioSocial()">Ver Relatório</button>
+            </div>
+        </div>
+
+        <!-- Pilar Governança -->
+        <div class="esg-card governanca">
+            <h3>Governança</h3>
+            <div class="esg-indicators">
+                <div class="indicator">
+                    <span class="label">Conformidade</span>
+                    <span class="value" id="conformidade">0%</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Auditorias Realizadas</span>
+                    <span class="value" id="auditorias">0</span>
+                </div>
+                <div class="indicator">
+                    <span class="label">Políticas Ativas</span>
+                    <span class="value" id="politicas">0</span>
+                </div>
+            </div>
+            <div class="esg-actions">
+                <button class="btn-primary" onclick="abrirRelatorioGovernanca()">Ver Relatório</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Segurança -->
+    <div class="seguranca-section">
+        <h3>Indicadores de Segurança</h3>
+        <div class="seguranca-grid">
+            <div class="seguranca-card">
+                <h4>Índices de Segurança</h4>
+                <div class="indicadores-seguranca">
+                    <div class="indicator">
+                        <span class="label">Taxa de Acidentes</span>
+                        <span class="value" id="taxaAcidentes">0</span>
+                    </div>
+                    <div class="indicator">
+                        <span class="label">Dias Sem Acidentes</span>
+                        <span class="value" id="diasSemAcidentes">0</span>
+                    </div>
+                    <div class="indicator">
+                        <span class="label">Inspeções Realizadas</span>
+                        <span class="value" id="inspecoes">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seguranca-card">
+                <h4>Treinamentos de Segurança</h4>
+                <div class="treinamentos-list" id="treinamentosSeguranca">
+                    <!-- Lista de treinamentos será preenchida via JavaScript -->
+                </div>
+            </div>
+
+            <div class="seguranca-card">
+                <h4>Certificações e Compliance</h4>
+                <div class="certificacoes-list" id="certificacoes">
+                    <!-- Lista de certificações será preenchida via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráficos de Performance -->
+    <div class="graficos-section">
+        <div class="grafico-container">
+            <h4>Evolução dos Indicadores de Segurança</h4>
+            <canvas id="graficoSeguranca"></canvas>
+        </div>
+        <div class="grafico-container">
+            <h4>Distribuição de Incidentes por Categoria</h4>
+            <canvas id="graficoIncidentes"></canvas>
+        </div>
+    </div>
+</section> 

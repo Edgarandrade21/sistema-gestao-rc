@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodoviário Confiança - Sistema de Gestão de Processos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo-rc.png" alt="Rodoviário Confiança" class="logo-img">
+        </div>
+        <div class="user-info">
+            <span>Bem-vindo, Admin</span>
+            <button id="logoutBtn">Sair</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-section="organograma">
+                    <i class="fas fa-sitemap"></i>
+                    <span>Organograma</span>
+                </div>
+                <div class="nav-item" data-section="esg">
+                    <i class="fas fa-leaf"></i>
+                    <span>Programas ESG</span>
+                </div>
+                <div class="nav-item" data-section="documentos">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Documentos da Empresa</span>
+                </div>
+                <div class="nav-item" data-section="processos">
+                    <i class="fas fa-tasks"></i>
+                    <span>Processos Internos</span>
+                </div>
+                <div class="nav-item" data-section="requisitos-legais">
+                    <i class="fas fa-gavel"></i>
+                    <span>Requisitos Legais</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Área Principal -->
+        <main class="main-content">
+            <!-- Organograma -->
+            <section id="organograma-section" class="content-section active">
+                <div id="organograma-container"></div>
+            </section>
+
+            <!-- ESG -->
+            <section id="esg-section" class="content-section">
+                <div id="esg-container"></div>
+            </section>
+
+            <!-- Documentos -->
+            <section id="documentos-section" class="content-section">
+                <div id="documentos-container"></div>
+            </section>
+
+            <!-- Processos -->
+            <section id="processos-section" class="content-section">
+                <div id="processos-internos-container"></div>
+            </section>
+
+            <!-- Requisitos Legais -->
+            <section id="requisitos-legais-section" class="content-section">
+                <div id="requisitos-legais-container"></div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Templates -->
+    <script type="text/template" id="organograma-template">
+        <!-- Conteúdo será carregado via JavaScript -->
+    </script>
+    
+    <script type="text/template" id="esg-template">
+        <!-- O conteúdo do template esg.html será carregado aqui -->
+    </script>
+    
+    <script type="text/template" id="documentos-template">
+        <!-- O conteúdo do template documentos.html será carregado aqui -->
+    </script>
+    
+    <script type="text/template" id="processos-internos-template">
+        <!-- O conteúdo do template processos-internos.html será carregado aqui -->
+    </script>
+
+    <script type="text/template" id="requisitos-legais-template">
+        <!-- O conteúdo do template requisitos-legais.html será carregado aqui -->
+    </script>
+    
+    <script src="js/loadTemplates.js"></script>
+    <script src="js/organograma.js"></script>
+    <script src="js/esg.js"></script>
+    <script src="js/documentos.js"></script>
+    <script src="js/processos-internos.js"></script>
+    <script src="js/requisitos-legais.js"></script>
+    <script src="js/notificacoes.js"></script>
+    <script>
+        // Verificar autenticação
+        if (!localStorage.getItem('isAuthenticated')) {
+            window.location.href = 'login.html';
+        }
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('isAuthenticated');
+            window.location.href = 'login.html';
+        });
+
+        // Navegação da barra lateral
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remover classe active de todos os itens
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                
+                // Adicionar classe active ao item clicado
+                this.classList.add('active');
+                
+                // Mostrar seção correspondente
+                const sectionId = this.dataset.section + '-section';
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+
+        // Exemplo de notificação
+        sistemaNotificacoes.adicionarNotificacao(
+            'Bem-vindo ao Sistema',
+            'Você está logado no sistema de gestão de processos.',
+            'info'
+        );
+    </script>
+</body>
+</html> 

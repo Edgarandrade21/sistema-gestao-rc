@@ -1,0 +1,78 @@
+<section class="notificacoes-coluna">
+    <div class="notificacoes-header">
+        <h2>Notificações</h2>
+        <div class="notificacoes-actions">
+            <button id="btnConfigurarNotificacoes" class="btn-primary" title="Configurar Notificações">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="indicadores-grid">
+        <div class="indicador-card">
+            <h3>Novas Notificações</h3>
+            <p id="totalNotificacoes">0</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Atualizações Legislativas</h3>
+            <p id="totalLegislativas">0</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Notícias do Setor</h3>
+            <p id="totalSetoriais">0</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Urgentes</h3>
+            <p id="totalUrgentes">0</p>
+        </div>
+    </div>
+
+    <!-- Lista de Notificações -->
+    <div class="notificacoes-grid" id="notificacoesContainer">
+        <!-- As notificações serão carregadas aqui via JavaScript -->
+    </div>
+
+    <!-- Modal de Configuração -->
+    <div id="modalConfigNotificacoes" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Configurações de Notificações</h3>
+                <button class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formConfigNotificacoes">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="notificacoesDesktop" checked>
+                            Notificações Desktop
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="notificacoesEmail" checked>
+                            Notificações por E-mail
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Frequência de Verificação</label>
+                        <select id="frequenciaVerificacao">
+                            <option value="1">A cada hora</option>
+                            <option value="6">A cada 6 horas</option>
+                            <option value="12">A cada 12 horas</option>
+                            <option value="24" selected>A cada 24 horas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail para Notificações</label>
+                        <input type="email" id="emailNotificacoes" placeholder="seu@email.com">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="btnCancelarConfig">Cancelar</button>
+                        <button type="submit" class="btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> 

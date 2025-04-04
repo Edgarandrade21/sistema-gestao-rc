@@ -1,0 +1,44 @@
+<!-- Template de Requisitos Legais -->
+<div class="requisitos-legais-container">
+    <div class="header-section">
+        <h2>Gestão de Requisitos Legais</h2>
+        <div class="filtros">
+            <select id="filtroCategoria">
+                <option value="todos">Todas as Categorias</option>
+                <option value="transporte">Transporte de Cargas</option>
+                <option value="trabalhista">Legislação Trabalhista</option>
+                <option value="ambiental">Legislação Ambiental</option>
+                <option value="seguranca">Segurança do Trabalho</option>
+            </select>
+            <select id="filtroStatus">
+                <option value="todos">Todos os Status</option>
+                <option value="vigente">Vigente</option>
+                <option value="revogado">Revogado</option>
+                <option value="emAnalise">Em Análise</option>
+            </select>
+            <input type="text" id="pesquisaRequisito" placeholder="Pesquisar requisitos...">
+        </div>
+    </div>
+
+    <div class="atualizacoes-section">
+        <h3>Últimas Atualizações Legislativas</h3>
+        <div class="atualizacoes-grid" id="ultimasAtualizacoes">
+            <!-- As atualizações serão inseridas aqui dinamicamente -->
+        </div>
+    </div>
+
+    <div class="requisitos-grid">
+        <!-- Os requisitos serão inseridos aqui dinamicamente -->
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Detalhes do Requisito Legal</h3>
+            <div class="modal-body">
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </div>
+        </div>
+    </div>
+</div> 

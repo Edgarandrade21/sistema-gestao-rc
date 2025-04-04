@@ -1,0 +1,77 @@
+<section class="qockpit">
+    <div class="qockpit-header">
+        <h2>Gestão de Processos</h2>
+        <div class="qockpit-actions">
+            <button id="btnNovoProcesso" class="btn-primary">
+                <i class="fas fa-plus"></i> Novo Processo
+            </button>
+            <button id="btnRelatorio" class="btn-secondary">
+                <i class="fas fa-chart-bar"></i> Relatórios
+            </button>
+        </div>
+    </div>
+
+    <!-- Indicadores Principais -->
+    <div class="indicadores-grid">
+        <div class="indicador-card">
+            <h3>Processos Ativos</h3>
+            <p id="totalProcessos">0</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Eficiência</h3>
+            <p id="eficiencia">0%</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Economia</h3>
+            <p id="economia">R$ 0,00</p>
+        </div>
+        <div class="indicador-card">
+            <h3>Produtividade</h3>
+            <p id="produtividade">0%</p>
+        </div>
+    </div>
+
+    <!-- Métricas de Desempenho -->
+    <div class="metricas-grid">
+        <div class="metrica-card">
+            <h3>Análise de Desempenho</h3>
+            <canvas id="desempenhoChart"></canvas>
+        </div>
+        <div class="metrica-card">
+            <h3>Economia por Departamento</h3>
+            <canvas id="economiaChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Departamentos -->
+    <div class="departamentos-grid">
+        <div class="departamento-card">
+            <h3>Administrativo</h3>
+            <div class="departamento-info">
+                <span>Processos: <strong id="adminProcessos">0</strong></span>
+                <span>Eficiência: <strong id="adminEficiencia">0%</strong></span>
+            </div>
+        </div>
+        <div class="departamento-card">
+            <h3>Operacional</h3>
+            <div class="departamento-info">
+                <span>Processos: <strong id="operProcessos">0</strong></span>
+                <span>Eficiência: <strong id="operEficiencia">0%</strong></span>
+            </div>
+        </div>
+        <div class="departamento-card">
+            <h3>Financeiro</h3>
+            <div class="departamento-info">
+                <span>Processos: <strong id="finProcessos">0</strong></span>
+                <span>Eficiência: <strong id="finEficiencia">0%</strong></span>
+            </div>
+        </div>
+        <div class="departamento-card">
+            <h3>RH</h3>
+            <div class="departamento-info">
+                <span>Processos: <strong id="rhProcessos">0</strong></span>
+                <span>Eficiência: <strong id="rhEficiencia">0%</strong></span>
+            </div>
+        </div>
+    </div>
+</section> 
