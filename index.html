@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodoviário Confiança - Sistema de Gestão de Processos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="assets/images/logo-rc.png.png" alt="Rodoviário Confiança" class="logo-img">
+            <img src="assets/images/logo-rc.png" alt="Rodoviário Confiança" class="logo-img">
         </div>
         <div class="user-info">
             <span>Bem-vindo, Admin</span>
@@ -62,37 +62,65 @@
                                 <i class="fas fa-edit"></i>
                                 Editar Organograma
                             </button>
-                            <button class="btn-layout" id="btnAlternarLayout">
-                                <i class="fas fa-arrows-alt-h"></i>
-                                Alternar Layout
-                            </button>
                         </div>
                     </div>
                     <div id="organograma-container" class="organograma-container"></div>
                 </div>
 
                 <!-- Modal de Cargo -->
-                <div id="modalCargo" class="modal-cargo">
+                <div id="cargoModal" class="modal-cargo">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3>Adicionar Cargo</h3>
-                            <button class="btn-close" id="btnFecharModal">&times;</button>
+                            <h3>Adicionar/Editar Cargo</h3>
+                            <button class="btn-close">&times;</button>
                         </div>
-                        <form id="formCargo">
+                        <form id="cargoForm">
                             <div class="form-group">
-                                <label for="nomePessoa">Nome da Pessoa</label>
-                                <input type="text" id="nomePessoa" name="nomePessoa" required>
+                                <label for="titulo">Título do Cargo</label>
+                                <input type="text" id="titulo" name="titulo" required>
                             </div>
                             <div class="form-group">
-                                <label for="cargo">Cargo</label>
-                                <input type="text" id="cargo" name="cargo" required>
+                                <label for="nome">Nome da Pessoa</label>
+                                <input type="text" id="nome" name="nome" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
+                            <div class="form-group">
+                                <label for="nivel">Nível</label>
+                                <select id="nivel" name="nivel" required>
+                                    <option value="1">Diretoria</option>
+                                    <option value="2">Gerência</option>
+                                    <option value="3">Coordenação</option>
+                                    <option value="4">Operacional</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargoSuperior">Cargo Superior</label>
+                                <select id="cargoSuperior" name="cargoSuperior">
+                                    <option value="">Selecione um cargo superior</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Posição em relação ao cargo superior</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="posicao" value="abaixo" checked>
+                                        Abaixo do Cargo Superior
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="posicao" value="lado">
+                                        Ao Lado do Cargo Superior
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Descrição do Cargo</label>
+                                <textarea id="descricao" name="descricao" rows="3"></textarea>
+                            </div>
                             <div class="modal-actions">
-                                <button type="button" class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                                <button type="button" class="btn-cancelar">Cancelar</button>
                                 <button type="submit" class="btn-salvar">Salvar</button>
                             </div>
                         </form>
@@ -149,7 +177,6 @@
     <script src="js/documentos.js"></script>
     <script src="js/processos-internos.js"></script>
     <script src="js/requisitos-legais.js"></script>
-    <script src="js/notificacoes.js"></script>
     <script>
         // Verificar autenticação
         if (!localStorage.getItem('isAuthenticated')) {
@@ -177,13 +204,6 @@
                 document.getElementById(sectionId).classList.add('active');
             });
         });
-
-        // Exemplo de notificação
-        sistemaNotificacoes.adicionarNotificacao(
-            'Bem-vindo ao Sistema',
-            'Você está logado no sistema de gestão de processos.',
-            'info'
-        );
     </script>
 </body>
 </html> 
