@@ -1,238 +1,77 @@
-<section class="organograma">
-    <div class="organograma-header">
-        <h2>Organograma</h2>
-        <div class="organograma-actions">
-            <button id="btnAdicionarCargo" class="btn-primary">Adicionar Cargo</button>
-            <button id="btnEditarOrganograma" class="btn-secondary">Editar Organograma</button>
-            <button id="btnAlternarLayout" class="btn-secondary">
-                <i class="fas fa-arrows-alt-h"></i> Alternar Layout
-            </button>
+<section id="organograma" class="content-section">
+    <div class="organograma">
+        <div class="organograma-header">
+            <h2>Organograma</h2>
+            <div class="organograma-actions">
+                <button id="btnAdicionarCargo" class="btn-primary">
+                    <i class="fas fa-plus"></i> Adicionar Cargo
+                </button>
+                <button id="btnEditarOrganograma" class="btn-secondary">
+                    <i class="fas fa-edit"></i> Editar Organograma
+                </button>
+            </div>
+        </div>
+        <div class="organograma-container">
+            <!-- O conteúdo do organograma será gerado dinamicamente pelo JavaScript -->
         </div>
     </div>
 
-    <div class="organograma-container vertical">
-        <div class="nivel-1">
-            <div class="cargo" data-cargo-id="1">
-                <div class="cargo-preview">
-                    <h3>Diretor</h3>
-                    <p class="nome">João Silva</p>
-                    <button class="btn-info">
-                        <i class="fas fa-info-circle"></i>
-                    </button>
-                </div>
-                <div class="cargo-detalhes">
-                    <div class="cargo-header">
-                        <div class="cargo-actions">
-                            <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                            <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                            <button class="btn-close" title="Fechar"><i class="fas fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="cargo-info">
-                        <p class="contato">joao.silva@empresa.com</p>
-                        <p class="telefone">(11) 99999-9999</p>
-                    </div>
-                    <div class="cargo-responsabilidades">
-                        <h4>Responsabilidades</h4>
-                        <ul>
-                            <li>Gestão estratégica da empresa</li>
-                            <li>Tomada de decisões executivas</li>
-                            <li>Planejamento de longo prazo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="linha-vertical"></div>
-            </div>
-
-            <div class="nivel-2">
-                <div class="cargo" data-cargo-id="2">
-                    <div class="cargo-preview">
-                        <h3>Gerente de Projetos</h3>
-                        <p class="nome">Maria Santos</p>
-                        <button class="btn-info">
-                            <i class="fas fa-info-circle"></i>
-                        </button>
-                    </div>
-                    <div class="cargo-detalhes">
-                        <div class="cargo-header">
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                                <button class="btn-close" title="Fechar"><i class="fas fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="contato">maria.santos@empresa.com</p>
-                            <p class="telefone">(11) 99999-8888</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Gestão de projetos</li>
-                                <li>Alocação de recursos</li>
-                                <li>Monitoramento de prazos</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="linha-vertical"></div>
-                </div>
-
-                <div class="nivel-3">
-                    <div class="cargo" data-cargo-id="3">
-                        <div class="cargo-header">
-                            <h3>Equipe 1</h3>
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="nome">Carlos Oliveira</p>
-                            <p class="contato">carlos.oliveira@empresa.com</p>
-                            <p class="telefone">(11) 99999-7777</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Desenvolvimento de projetos</li>
-                                <li>Implementação de soluções</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="cargo" data-cargo-id="4">
-                        <div class="cargo-header">
-                            <h3>Equipe 2</h3>
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="nome">Ana Costa</p>
-                            <p class="contato">ana.costa@empresa.com</p>
-                            <p class="telefone">(11) 99999-6666</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Análise de requisitos</li>
-                                <li>Testes de qualidade</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nivel-2">
-                <div class="cargo" data-cargo-id="5">
-                    <div class="cargo-preview">
-                        <h3>Gerente de Operações</h3>
-                        <p class="nome">Pedro Almeida</p>
-                        <button class="btn-info">
-                            <i class="fas fa-info-circle"></i>
-                        </button>
-                    </div>
-                    <div class="cargo-detalhes">
-                        <div class="cargo-header">
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                                <button class="btn-close" title="Fechar"><i class="fas fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="contato">pedro.almeida@empresa.com</p>
-                            <p class="telefone">(11) 99999-5555</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Gestão operacional</li>
-                                <li>Otimização de processos</li>
-                                <li>Controle de qualidade</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="linha-vertical"></div>
-                </div>
-
-                <div class="nivel-3">
-                    <div class="cargo" data-cargo-id="6">
-                        <div class="cargo-header">
-                            <h3>Equipe 4</h3>
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="nome">Lucas Pereira</p>
-                            <p class="contato">lucas.pereira@empresa.com</p>
-                            <p class="telefone">(11) 99999-4444</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Suporte técnico</li>
-                                <li>Manutenção de sistemas</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="cargo" data-cargo-id="7">
-                        <div class="cargo-header">
-                            <h3>Equipe 5</h3>
-                            <div class="cargo-actions">
-                                <button class="btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
-                                <button class="btn-delete" title="Remover"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                        <div class="cargo-info">
-                            <p class="nome">Juliana Lima</p>
-                            <p class="contato">juliana.lima@empresa.com</p>
-                            <p class="telefone">(11) 99999-3333</p>
-                        </div>
-                        <div class="cargo-responsabilidades">
-                            <h4>Responsabilidades</h4>
-                            <ul>
-                                <li>Atendimento ao cliente</li>
-                                <li>Gestão de demandas</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Edição -->
-    <div id="modalCargo" class="modal">
+    <!-- Modal para Adicionar/Editar Cargo -->
+    <div id="cargoModal" class="modal-cargo">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Editar Cargo</h2>
-            <form id="formCargo">
+            <div class="modal-header">
+                <h3>Adicionar/Editar Cargo</h3>
+                <button class="btn-close">&times;</button>
+            </div>
+            <form id="cargoForm">
                 <div class="form-group">
-                    <label for="cargoTitulo">Título do Cargo:</label>
-                    <input type="text" id="cargoTitulo" required>
+                    <label for="titulo">Título do Cargo:</label>
+                    <input type="text" id="titulo" name="titulo" required>
                 </div>
                 <div class="form-group">
-                    <label for="cargoNome">Nome:</label>
-                    <input type="text" id="cargoNome" required>
+                    <label for="nome">Nome do Responsável:</label>
+                    <input type="text" id="nome" name="nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="cargoEmail">E-mail:</label>
-                    <input type="email" id="cargoEmail" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="cargoTelefone">Telefone:</label>
-                    <input type="tel" id="cargoTelefone" required>
+                    <label for="nivel">Nível do Cargo:</label>
+                    <select id="nivel" name="nivel" required>
+                        <option value="1">Diretoria</option>
+                        <option value="2">Gerência</option>
+                        <option value="3">Coordenação</option>
+                        <option value="4">Operacional</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="cargoResponsabilidades">Responsabilidades:</label>
-                    <textarea id="cargoResponsabilidades" rows="4" required></textarea>
+                    <label for="cargoSuperior">Cargo Superior:</label>
+                    <select id="cargoSuperior" name="cargoSuperior">
+                        <option value="">Selecione um cargo superior</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn-primary">Salvar</button>
+                <div class="form-group">
+                    <label>Posição em relação ao cargo superior:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="posicao" value="abaixo" checked>
+                            Abaixo do Cargo Superior
+                        </label>
+                        <label>
+                            <input type="radio" name="posicao" value="lado">
+                            Ao Lado do Cargo Superior
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição do Cargo:</label>
+                    <textarea id="descricao" name="descricao" rows="4"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Salvar</button>
+                </div>
             </form>
         </div>
     </div>
