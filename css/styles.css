@@ -659,4 +659,191 @@ header {
 
 .notificacao button:hover {
     display: none;
+}
+
+/* Estilos ESG */
+.esg-section {
+    padding: 0;
+}
+
+.esg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 8px;
+}
+
+.esg-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.data-hora {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.esg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.esg-card {
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.esg-card:hover {
+    transform: translateY(-5px);
+}
+
+.esg-card h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    border-bottom: 2px solid;
+    padding-bottom: 0.5rem;
+}
+
+.esg-card.ambiental h3 {
+    border-color: #2ecc71;
+}
+
+.esg-card.social h3 {
+    border-color: #3498db;
+}
+
+.esg-card.governanca h3 {
+    border-color: #e74c3c;
+}
+
+.esg-indicators {
+    display: grid;
+    gap: 1rem;
+}
+
+.indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--hover-color);
+    border-radius: 6px;
+}
+
+.indicator .label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.indicator .value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.esg-actions {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+}
+
+/* Seção de Segurança */
+.seguranca-section {
+    margin-top: 2rem;
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.seguranca-section h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.seguranca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.seguranca-card {
+    background: var(--hover-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.seguranca-card h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.indicadores-seguranca {
+    display: grid;
+    gap: 1rem;
+}
+
+.treinamentos-list,
+.certificacoes-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.treinamentos-list .item,
+.certificacoes-list .item {
+    padding: 0.75rem;
+    background: var(--bg-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Gráficos */
+.graficos-section {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.grafico-container {
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grafico-container h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
 } 
